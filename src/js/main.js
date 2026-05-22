@@ -1,19 +1,27 @@
 // i18n
-let currentLang = 'es';
-
-function toggleLang() {
-    currentLang = currentLang === 'es' ? 'en' : 'es';
-    document.documentElement.lang = currentLang;
+function applyLang(lang) {
+    document.documentElement.lang = lang;
     const toggle = document.querySelector('.lang-toggle');
-    if (toggle) toggle.innerText = currentLang === 'es' ? 'EN' : 'ES';
+    if (toggle) toggle.innerText = lang === 'es' ? 'EN' : 'ES';
     document.querySelectorAll('[data-es]').forEach(el => {
-        const attr = currentLang === 'es' ? 'data-es' : 'data-en';
+        const attr = lang === 'es' ? 'data-es' : 'data-en';
         const t = el.getAttribute(attr);
         if (t) el.innerText = t;
     });
 }
 
+function toggleLang() {
+    const newLang = document.documentElement.lang === 'es' ? 'en' : 'es';
+    localStorage.setItem('nexa-lang', newLang);
+    applyLang(newLang);
+}
+
 document.querySelector('.lang-toggle')?.addEventListener('click', toggleLang);
+
+const savedLang = localStorage.getItem('nexa-lang');
+if (savedLang && savedLang !== 'es') {
+    applyLang(savedLang);
+}
 
 // Waitlist form
 document.getElementById('waitlistForm')?.addEventListener('submit', (e) => {

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexa — Descargar</title>
+    <meta name="description" content="Descarga la app de Nexa y comienza a socializar sin presión. Próximamente en App Store y Google Play.">
+    <meta property="og:title" content="Nexa — Descargar">
+    <meta property="og:description" content="Descarga la app de Nexa y comienza a socializar sin presión.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/nb0bAl8.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/base.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
+    <link rel="stylesheet" href="src/styles/components.css">
+    <link rel="stylesheet" href="src/styles/responsive.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo"><img src="https://i.imgur.com/nb0bAl8.png" alt="Nexa logo"><span class="logo-text">NEXA</span></div>
+            <div class="nav-links">
+                <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="premium.html" data-es="Premium" data-en="Premium">Premium</a>
+                <a href="hosts.html" data-es="Hosts" data-en="Hosts">Hosts</a>
+                <a href="descargar.html" aria-current="page" data-es="Descargar" data-en="Download">Descargar</a>
+                <a href="lista-de-espera.html" class="nav-cta" data-es="Lista de espera" data-en="Waitlist">Lista de espera</a>
+            </div>
+            <button class="lang-toggle" aria-label="Cambiar idioma">EN</button>
+        </nav>
+
+        <section class="hero" id="download">
+            <h1 class="gradient-text" data-es="Descarga Nexa" data-en="Download Nexa">Descarga Nexa</h1>
+            <p style="margin: 2rem 0; font-size: 1.25rem;" data-es="Disponible próximamente en las principales tiendas." data-en="Coming soon on major stores.">Disponible próximamente en las principales tiendas.</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                <a href="#" class="btn btn-primary" data-es="App Store" data-en="App Store">App Store</a>
+                <a href="#" class="btn btn-secondary" data-es="Google Play" data-en="Google Play">Google Play</a>
+            </div>
+        </section>
+
+        <section style="padding: 6rem 0; text-align: center;">
+            <h2 data-es="Próximamente" data-en="Coming Soon">Próximamente</h2>
+            <p style="color: var(--text-muted); margin: 1rem auto; max-width: 600px;" data-es="Estamos trabajando para llevar Nexa a tu dispositivo. Déjanos tu correo y te avisaremos cuando esté disponible." data-en="We're working to bring Nexa to your device. Leave us your email and we'll let you know when it's available.">Estamos trabajando para llevar Nexa a tu dispositivo. Déjanos tu correo y te avisaremos cuando esté disponible.</p>
+            <a href="lista-de-espera.html" class="btn btn-primary" data-es="Notificarme" data-en="Notify me">Notificarme</a>
+        </section>
+
+        <footer>
+            <div>© 2026 AxioLabs</div>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+                <a class="social-link" href="https://x.com/SomosNexa" target="_blank" rel="noopener" aria-label="X - SomosNexa">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gX" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4FA8E8"/><stop offset="100%" stop-color="#8A4FFF"/></linearGradient></defs><path d="M5 4L19 20M19 4L5 20" stroke="url(#gX)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a class="social-link" href="https://www.instagram.com/nexaapplatam/" target="_blank" rel="noopener" aria-label="Instagram - nexaapplatam">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gI" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4FA8E8"/><stop offset="100%" stop-color="#8A4FFF"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5" stroke="url(#gI)" stroke-width="1.6" fill="none"/><circle cx="12" cy="12" r="3.2" stroke="url(#gI)" stroke-width="1.6" fill="none"/><circle cx="17.5" cy="6.5" r="0.6" fill="url(#gI)"/></svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="src/js/main.js"></script>
+</body>
+</html>

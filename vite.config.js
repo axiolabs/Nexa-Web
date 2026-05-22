@@ -10,6 +10,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         premium: resolve(__dirname, 'premium.html'),
         hosts: resolve(__dirname, 'hosts.html'),
+        descargar: resolve(__dirname, 'descargar.html'),
+        listaEspera: resolve(__dirname, 'lista-de-espera.html'),
       },
     },
   },

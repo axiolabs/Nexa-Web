@@ -23,11 +23,11 @@
         <nav>
             <div class="logo"><img src="https://i.imgur.com/nb0bAl8.png" alt="Nexa logo"><span class="logo-text">NEXA</span></div>
             <div class="nav-links">
-                <a href="#features" data-es="Funciones" data-en="Features">Funciones</a>
-                <a href="#premium" data-es="Premium" data-en="Premium">Premium</a>
-                <a href="#hosts" data-es="Hosts" data-en="Hosts">Hosts</a>
-                <a href="#download" data-es="Descargar" data-en="Download">Descargar</a>
-                <a href="#waitlist" class="nav-cta" data-es="Lista de espera" data-en="Waitlist">Lista de espera</a>
+                <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="premium.html" data-es="Premium" data-en="Premium">Premium</a>
+                <a href="hosts.html" data-es="Hosts" data-en="Hosts">Hosts</a>
+                <a href="index.html#download" data-es="Descargar" data-en="Download">Descargar</a>
+                <a href="index.html#waitlist" class="nav-cta" data-es="Lista de espera" data-en="Waitlist">Lista de espera</a>
             </div>
             <button class="lang-toggle" aria-label="Cambiar idioma">EN</button>
         </nav>
@@ -124,43 +124,6 @@
         </footer>
     </div>
 
-    <script>
-        let currentLang = 'es';
-
-        function toggleLang() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            document.documentElement.lang = currentLang;
-            const toggle = document.querySelector('.lang-toggle');
-            if (toggle) toggle.innerText = currentLang === 'es' ? 'EN' : 'ES';
-            document.querySelectorAll('[data-es]').forEach(el => {
-                const attr = currentLang === 'es' ? 'data-es' : 'data-en';
-                const t = el.getAttribute(attr);
-                if (t) el.innerText = t;
-            });
-        }
-
-        document.querySelector('.lang-toggle')?.addEventListener('click', toggleLang);
-
-        document.getElementById('waitlistForm')?.addEventListener('submit', (e) => {
-            e.preventDefault();
-            window.open('https://forms.gle/s7UvxqbVVACWn2HY8', '_blank', 'noopener');
-        });
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.card, .member').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-    </script>
+    <script src="src/js/main.js"></script>
 </body>
 </html>

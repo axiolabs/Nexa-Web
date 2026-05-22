@@ -178,6 +178,24 @@
     filter: grayscale(0);
 }
 
+.footer-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--text-main);
+}
+
 input, select {
     padding: 1rem;
     border-radius: 10px;

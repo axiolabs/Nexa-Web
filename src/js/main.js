@@ -23,12 +23,6 @@ if (savedLang && savedLang !== 'es') {
     applyLang(savedLang);
 }
 
-// Waitlist form
-document.getElementById('waitlistForm')?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    window.open('https://forms.gle/s7UvxqbVVACWn2HY8', '_blank', 'noopener');
-});
-
 // Scroll animations
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

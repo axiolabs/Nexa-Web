@@ -1,0 +1,28 @@
+:root {
+    --bg: #0a0a0c;
+    --accent: #8a4fff;
+    --accent-glow: rgba(138, 79, 255, 0.4);
+    --text-main: #ffffff;
+    --text-muted: #a0a0b0;
+    --gradient: linear-gradient(135deg, #8a4fff 0%, #4f86ff 100%);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Syne', sans-serif;
+}

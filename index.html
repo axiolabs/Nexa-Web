@@ -4,305 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexa — Socializa sin presión</title>
+    <meta name="description" content="Nexa es la plataforma diseñada para romper las barreras sociales y permitir conexiones auténticas basadas en la compatibilidad y espacios seguros.">
+    <meta property="og:title" content="Nexa — Socializa sin presión">
+    <meta property="og:description" content="Conecta de forma natural con personas que comparten tus intereses.">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="https://i.imgur.com/nb0bAl8.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0a0a0c;
-            --accent: #8a4fff;
-            --accent-glow: rgba(138, 79, 255, 0.4);
-            --text-main: #ffffff;
-            --text-muted: #a0a0b0;
-            --gradient: linear-gradient(135deg, #8a4fff 0%, #4f86ff 100%);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            font-family: 'DM Sans', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Syne', sans-serif;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        nav {
-            padding: 1.5rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(10px);
-            z-index: 100;
-        }
-
-        .logo { display: flex; align-items: center; gap: 0.6rem; font-size: 1.25rem; font-weight: 800; }
-        .logo img { height: 40px; display: inline-block; }
-        .logo-text { font-family: 'Syne', sans-serif; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 1px; font-size: 1.05rem; }
-        .social-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 10px; transition: transform 0.18s ease, box-shadow 0.18s ease; }
-        .social-link svg { width: 20px; height: 20px; display: block; }
-        .social-link:hover { transform: translateY(-3px); box-shadow: 0 6px 18px var(--accent-glow); }
-        .lang-toggle {
-            background: var(--card-bg);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .hero {
-            position: relative;
-            left: 50%;
-            width: 100vw;
-            margin-left: -50vw;
-            padding: 9rem 2rem;
-            min-height: 78vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background:
-                linear-gradient(90deg, rgba(10, 10, 12, 0.92) 0%, rgba(10, 10, 12, 0.72) 38%, rgba(10, 10, 12, 0.92) 100%),
-                url('https://i.imgur.com/dLmf9jW.jpeg') center/cover no-repeat;
-            box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.45);
-            overflow: hidden;
-        }
-
-        .hero > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero .btn-secondary {
-            border-color: rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(8px);
-        }
-
-        .gradient-text {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 4rem;
-            line-height: 1.1;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            margin: 1rem;
-            transition: var(--transition);
-        }
-
-        .btn-primary { background: var(--gradient); color: white; }
-        .btn-secondary { border: 1px solid white; color: white; }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            padding: 4rem 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-        }
-
-        .stat-num { font-size: 3rem; font-weight: 800; color: var(--accent); }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: var(--transition);
-        }
-
-        .card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.08); }
-
-        .team {
-            text-align: center;
-            padding: 6rem 0;
-        }
-
-        .team-grid {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-        }
-
-        .member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            filter: grayscale(1);
-            transition: 0.5s;
-        }
-
-        .member:hover img { filter: grayscale(0); }
-
-        .waitlist {
-            background: var(--card-bg);
-            padding: 4rem;
-            border-radius: 40px;
-            text-align: center;
-            margin: 6rem 0;
-        }
-
-        input, select {
-            padding: 1rem;
-            border-radius: 10px;
-            border: none;
-            width: 250px;
-            margin: 0.5rem;
-            background: #1a1a1c;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .logo {
-                gap: 0.45rem;
-            }
-
-            .logo img {
-                height: 32px;
-            }
-
-            .logo-text {
-                font-size: 0.9rem;
-                letter-spacing: 0.12em;
-            }
-
-            nav {
-                padding: 1rem 0;
-            }
-
-            .lang-toggle {
-                padding: 0.45rem 0.85rem;
-            }
-
-            .hero {
-                left: 0;
-                width: 100%;
-                margin-left: 0;
-                min-height: auto;
-                padding: 5.5rem 1rem 4.5rem;
-                background:
-                    linear-gradient(180deg, rgba(10, 10, 12, 0.92) 0%, rgba(10, 10, 12, 0.82) 100%),
-                    url('https://i.imgur.com/dLmf9jW.jpeg') center/cover no-repeat;
-            }
-
-            .hero p {
-                font-size: 1rem !important;
-                max-width: 34ch;
-            }
-
-            .hero .btn {
-                display: block;
-                width: 100%;
-                max-width: 320px;
-                margin: 0.75rem auto 0;
-            }
-
-            .gradient-text {
-                font-size: 2.4rem;
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 1rem;
-                padding: 3rem 0;
-            }
-
-            .stat-num {
-                font-size: 2rem;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                margin-top: 2.5rem;
-            }
-
-            .card {
-                padding: 1.4rem;
-            }
-
-            .team {
-                padding: 4rem 0;
-            }
-
-            .team-grid {
-                gap: 1.5rem;
-                margin-top: 2rem;
-            }
-
-            .member img {
-                width: 116px;
-                height: 116px;
-            }
-
-            .waitlist {
-                padding: 1.5rem;
-                border-radius: 24px;
-                margin: 4rem 0;
-            }
-
-            .waitlist .btn {
-                width: 100%;
-                margin: 1rem 0 0;
-            }
-
-            footer {
-                flex-direction: column;
-                align-items: flex-start !important;
-                gap: 1rem;
-            }
-
-            * { cursor: auto; }
-        }
-    </style>
 </head>
 <body>
 
     <div class="container">
         <nav>
             <div class="logo"><img src="https://i.imgur.com/nb0bAl8.png" alt="Nexa logo"><span class="logo-text">NEXA</span></div>
-            <button class="lang-toggle" onclick="toggleLang()">EN</button>
+            <div class="nav-links">
+                <a href="#features" data-es="Funciones" data-en="Features">Funciones</a>
+                <a href="#premium" data-es="Premium" data-en="Premium">Premium</a>
+                <a href="#hosts" data-es="Hosts" data-en="Hosts">Hosts</a>
+                <a href="#download" data-es="Descargar" data-en="Download">Descargar</a>
+                <a href="#waitlist" class="nav-cta" data-es="Lista de espera" data-en="Waitlist">Lista de espera</a>
+            </div>
+            <button class="lang-toggle" aria-label="Cambiar idioma">EN</button>
         </nav>
 
         <section class="hero" id="home">
@@ -325,20 +48,55 @@
         </section>
 
         <section class="features" id="features">
-            <div class="card"><h3 data-es="Perfil de personalidad" data-en="Personality profile">Perfil de personalidad</h3><p data-es="Test de MBTI y Big Five integrado." data-en="Integrated MBTI and Big Five testing."></p></div>
-            <div class="card"><h3 data-es="Mapa de espacios" data-en="Space mapper">Mapa de espacios</h3><p data-es="Encuentra lugares ideales para conectar." data-en="Find ideal spots to connect."></p></div>
-            <div class="card"><h3 data-es="Planes y eventos" data-en="Plans & events">Planes y eventos</h3><p data-es="Agéndate con propuestas de la comunidad." data-en="Schedule with community proposals."></p></div>
-            <div class="card"><h3 data-es="Hosts verificados" data-en="Verified hosts">Hosts verificados</h3><p data-es="Ambientes seguros y moderados." data-en="Safe and moderated environments."></p></div>
-            <div class="card"><h3 data-es="Conexiones naturales" data-en="Natural connections">Conexiones naturales</h3><p data-es="Sin algoritmos de matching superficial." data-en="No superficial matching algorithms."></p></div>
-            <div class="card"><h3 data-es="Privacidad primero" data-en="Privacy first">Privacidad primero</h3><p data-es="Tus datos están protegidos siempre." data-en="Your data is always protected."></p></div>
+            <div class="card"><h3 data-es="Perfil de personalidad" data-en="Personality profile">Perfil de personalidad</h3><p data-es="Test de MBTI y Big Five integrado." data-en="Integrated MBTI and Big Five testing.">Test de MBTI y Big Five integrado.</p></div>
+            <div class="card"><h3 data-es="Mapa de espacios" data-en="Space mapper">Mapa de espacios</h3><p data-es="Encuentra lugares ideales para conectar." data-en="Find ideal spots to connect.">Encuentra lugares ideales para conectar.</p></div>
+            <div class="card"><h3 data-es="Planes y eventos" data-en="Plans & events">Planes y eventos</h3><p data-es="Agéndate con propuestas de la comunidad." data-en="Schedule with community proposals.">Agéndate con propuestas de la comunidad.</p></div>
+            <div class="card"><h3 data-es="Hosts verificados" data-en="Verified hosts">Hosts verificados</h3><p data-es="Ambientes seguros y moderados." data-en="Safe and moderated environments.">Ambientes seguros y moderados.</p></div>
+            <div class="card"><h3 data-es="Conexiones naturales" data-en="Natural connections">Conexiones naturales</h3><p data-es="Sin algoritmos de matching superficial." data-en="No superficial matching algorithms.">Sin algoritmos de matching superficial.</p></div>
+            <div class="card"><h3 data-es="Privacidad primero" data-en="Privacy first">Privacidad primero</h3><p data-es="Tus datos están protegidos siempre." data-en="Your data is always protected.">Tus datos están protegidos siempre.</p></div>
+        </section>
+
+        <section id="premium" style="padding: 6rem 0; text-align: center;">
+            <h2 data-es="Beneficios Premium" data-en="Premium Benefits">Beneficios Premium</h2>
+            <p style="color: var(--text-muted); margin-top: 1rem;" data-es="Desbloquea todo el potencial de Nexa" data-en="Unlock Nexa's full potential">Desbloquea todo el potencial de Nexa</p>
+            <div class="features" style="margin-top: 2rem;">
+                <div class="card"><h3 data-es="Perfil avanzado" data-en="Advanced profile">Perfil avanzado</h3><p data-es="Tests de personalidad completos con análisis detallado." data-en="Complete personality tests with detailed analysis.">Tests de personalidad completos con análisis detallado.</p></div>
+                <div class="card"><h3 data-es="Estadísticas" data-en="Statistics">Estadísticas</h3><p data-es="Visualiza el crecimiento de tu red social." data-en="Visualize your social network growth.">Visualiza el crecimiento de tu red social.</p></div>
+                <div class="card"><h3 data-es="Prioridad en eventos" data-en="Event priority">Prioridad en eventos</h3><p data-es="Acceso anticipado a eventos exclusivos." data-en="Early access to exclusive events.">Acceso anticipado a eventos exclusivos.</p></div>
+                <div class="card"><h3 data-es="Badge premium" data-en="Premium badge">Badge premium</h3><p data-es="Distínguete con tu insignia verificada." data-en="Stand out with your verified badge.">Distínguete con tu insignia verificada.</p></div>
+                <div class="card"><h3 data-es="Soporte prioritario" data-en="Priority support">Soporte prioritario</h3><p data-es="Ayuda rápida y personalizada." data-en="Fast and personalized support.">Ayuda rápida y personalizada.</p></div>
+                <div class="card"><h3 data-es="Hosts exclusivos" data-en="Exclusive hosts">Hosts exclusivos</h3><p data-es="Acceso a hosts verificados de primer nivel." data-en="Access to top-tier verified hosts.">Acceso a hosts verificados de primer nivel.</p></div>
+            </div>
+        </section>
+
+        <section id="hosts" style="padding: 6rem 0; text-align: center;">
+            <h2 data-es="Beneficios para Hosts" data-en="Host Benefits">Beneficios para Hosts</h2>
+            <p style="color: var(--text-muted); margin-top: 1rem;" data-es="Organiza eventos y construye comunidad" data-en="Organize events and build community">Organiza eventos y construye comunidad</p>
+            <div class="features" style="margin-top: 2rem;">
+                <div class="card"><h3 data-es="Crea eventos" data-en="Create events">Crea eventos</h3><p data-es="Organiza encuentros temáticos sin límites." data-en="Organize themed meetups without limits.">Organiza encuentros temáticos sin límites.</p></div>
+                <div class="card"><h3 data-es="Perfil verificado" data-en="Verified profile">Perfil verificado</h3><p data-es="Credibilidad y confianza para tu comunidad." data-en="Credibility and trust for your community.">Credibilidad y confianza para tu comunidad.</p></div>
+                <div class="card"><h3 data-es="Panel de gestión" data-en="Management panel">Panel de gestión</h3><p data-es="Administra asistentes, ingresos y métricas." data-en="Manage attendees, revenue and metrics.">Administra asistentes, ingresos y métricas.</p></div>
+                <div class="card"><h3 data-es="Monetización" data-en="Monetization">Monetización</h3><p data-es="Genera ingresos con tus eventos." data-en="Generate income with your events.">Genera ingresos con tus eventos.</p></div>
+                <div class="card"><h3 data-es="Herramientas de moderación" data-en="Moderation tools">Herramientas de moderación</h3><p data-es="Mantén espacios seguros y saludables." data-en="Keep spaces safe and healthy.">Mantén espacios seguros y saludables.</p></div>
+                <div class="card"><h3 data-es="Promoción destacada" data-en="Featured promotion">Promoción destacada</h3><p data-es="Tus eventos aparecen en primer plano." data-en="Your events appear front and center.">Tus eventos aparecen en primer plano.</p></div>
+            </div>
         </section>
 
         <section class="team">
             <h2 data-es="Nuestro Equipo" data-en="Our Team">Nuestro Equipo</h2>
             <div class="team-grid">
-                <div class="member"><img src="https://i.imgur.com/WvRavwK.jpg" alt="Stiven Ospina"><h3>Stiven Ospina</h3><p data-es="Director" data-en="Director">Director</p><a href="https://github.com/Stivliive" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">@Stivliive</a></div>
-                <div class="member"><img src="https://i.imgur.com/co0aGQ3.jpg" alt="Diego Alonso"><h3>Diego Alonso</h3><p data-es="Sub Director" data-en="Sub Director">Sub Director</p><a href="https://github.com/nasadmidev" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">@nasadmidev</a></div>
-                <div class="member"><img src="https://i.imgur.com/2YKlGCW.jpg" alt="Sebastian Zhunaula"><h3>Sebastian Zhunaula</h3><p data-es="Lider Creativo" data-en="Creative Lead">Lider Creativo</p><a href="https://github.com/devsebastian44" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">@devsebastian44</a></div>
+                <div class="member"><img src="https://i.imgur.com/WvRavwK.jpg" alt="Stiven Ospina"><h3>Stiven Ospina</h3><p data-es="Director" data-en="Director">Director</p><a href="https://github.com/Stivliive" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">@Stivliive</a></div>
+                <div class="member"><img src="https://i.imgur.com/co0aGQ3.jpg" alt="Diego Alonso"><h3>Diego Alonso</h3><p data-es="Sub Director" data-en="Sub Director">Sub Director</p><a href="https://github.com/nasadmidev" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">@nasadmidev</a></div>
+                <div class="member"><img src="https://i.imgur.com/2YKlGCW.jpg" alt="Sebastian Zhunaula"><h3>Sebastian Zhunaula</h3><p data-es="Lider Creativo" data-en="Creative Lead">Lider Creativo</p><a href="https://github.com/devsebastian44" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">@devsebastian44</a></div>
+            </div>
+        </section>
+
+        <section id="download" style="padding: 6rem 0; text-align: center;">
+            <h2 data-es="Descarga la app" data-en="Download the app">Descarga la app</h2>
+            <p style="color: var(--text-muted); margin: 1rem 0 2rem;" data-es="Próximamente disponible en" data-en="Coming soon on">Próximamente disponible en</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="#" class="btn btn-primary" data-es="App Store" data-en="App Store">App Store</a>
+                <a href="#" class="btn btn-secondary" data-es="Google Play" data-en="Google Play">Google Play</a>
             </div>
         </section>
 
@@ -349,7 +107,7 @@
             </form>
         </section>
 
-        <footer style="padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <footer>
             <div>© 2026 AxioLabs</div>
             <div style="display: flex; gap: 0.6rem; align-items: center;">
                 <a class="social-link" href="https://x.com/SomosNexa" target="_blank" rel="noopener" aria-label="X - SomosNexa">
@@ -362,38 +120,6 @@
         </footer>
     </div>
 
-    <script>
-        let currentLang = 'es';
-        function toggleLang() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            document.documentElement.lang = currentLang;
-            document.querySelector('.lang-toggle').innerText = currentLang === 'es' ? 'EN' : 'ES';
-            document.querySelectorAll('[data-es]').forEach(el => {
-                const attr = currentLang === 'es' ? 'data-es' : 'data-en';
-                el.innerText = el.getAttribute(attr) || el.innerText;
-            });
-        }
-
-        document.getElementById('waitlistForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            window.open('https://forms.gle/s7UvxqbVVACWn2HY8', '_blank', 'noopener');
-        });
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.card, .member').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-    </script>
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>

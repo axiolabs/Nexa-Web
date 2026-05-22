@@ -1,0 +1,112 @@
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    nav {
+        padding: 1rem 0;
+    }
+
+    .logo {
+        gap: 0.45rem;
+    }
+
+    .logo img {
+        height: 32px;
+    }
+
+    .logo-text {
+        font-size: 0.9rem;
+        letter-spacing: 0.12em;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .lang-toggle {
+        padding: 0.45rem 0.85rem;
+    }
+
+    .hero {
+        left: 0;
+        width: 100%;
+        margin-left: 0;
+        min-height: auto;
+        padding: 5.5rem 1rem 4.5rem;
+        background:
+            linear-gradient(180deg, rgba(10, 10, 12, 0.92) 0%, rgba(10, 10, 12, 0.82) 100%),
+            url('https://i.imgur.com/dLmf9jW.jpeg') center/cover no-repeat;
+    }
+
+    .hero p {
+        font-size: 1rem !important;
+        max-width: 34ch;
+    }
+
+    .hero .btn {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 0.75rem auto 0;
+    }
+
+    .gradient-text {
+        font-size: 2.4rem;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        padding: 3rem 0;
+    }
+
+    .stat-num {
+        font-size: 2rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2.5rem;
+    }
+
+    .card {
+        padding: 1.4rem;
+    }
+
+    .team {
+        padding: 4rem 0;
+    }
+
+    .team-grid {
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .member img {
+        width: 116px;
+        height: 116px;
+    }
+
+    .waitlist {
+        padding: 1.5rem;
+        border-radius: 24px;
+        margin: 4rem 0;
+    }
+
+    .waitlist .btn {
+        width: 100%;
+        margin: 1rem 0 0;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 1rem;
+    }
+
+    * {
+        cursor: auto;
+    }
+}

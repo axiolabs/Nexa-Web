@@ -9,6 +9,11 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
 * {
     margin: 0;
     padding: 0;

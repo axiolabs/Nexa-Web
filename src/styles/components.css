@@ -77,6 +77,35 @@
     width: 100%;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition);
+}
+
+.hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger:hover {
+    background: rgba(255,255,255,0.1);
+}
+
 .lang-toggle {
     background: var(--card-bg);
     border: 1px solid rgba(255,255,255,0.1);

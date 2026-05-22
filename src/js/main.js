@@ -18,6 +18,23 @@ function toggleLang() {
 
 document.querySelector('.lang-toggle')?.addEventListener('click', toggleLang);
 
+// Hamburger menu
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger?.addEventListener('click', () => {
+    nav.classList.toggle('nav-open');
+    document.body.style.overflow = nav.classList.contains('nav-open') ? 'hidden' : '';
+});
+
+navLinks?.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+        nav.classList.remove('nav-open');
+        document.body.style.overflow = '';
+    }
+});
+
 const savedLang = localStorage.getItem('nexa-lang');
 if (savedLang && savedLang !== 'es') {
     applyLang(savedLang);

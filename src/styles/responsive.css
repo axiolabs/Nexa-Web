@@ -20,8 +20,59 @@
         letter-spacing: 0.12em;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(300px, 80vw);
+        height: 100vh;
+        background: rgba(10, 10, 12, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 5rem 2rem 2rem;
+        gap: 0.5rem;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+        display: flex;
+        align-items: stretch;
+    }
+
+    .nav-open .nav-links {
+        transform: translateX(0);
+    }
+
+    .nav-open .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-open .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-open .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 0.9rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-links a::after {
         display: none;
+    }
+
+    .nav-cta {
+        margin-top: 0.5rem;
+        text-align: center;
+        padding: 0.9rem !important;
+        border-bottom: none !important;
     }
 
     .lang-toggle {

@@ -1,0 +1,24 @@
+name: Actualizar link APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_id:
+        description: 'ID del build en Expo (ej: 4a892d15-6158-4984-8b2d-80eb71a771e7)'
+        required: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reemplazar build ID en descargar.html
+        run: |
+          sed -i "s|/builds/[a-f0-9-]*\"|/builds/${{ github.event.inputs.build_id }}\"|" descargar.html
+      - name: Commit y push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add descargar.html
+          git commit -m "chore: update APK build to ${{ github.event.inputs.build_id }}"
+          git push

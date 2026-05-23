@@ -40,6 +40,15 @@ if (savedLang && savedLang !== 'es') {
     applyLang(savedLang);
 }
 
+// Latest build URL — fetch from JSON so it can be updated without touching HTML
+fetch('latest-build.json')
+  .then(r => r.json())
+  .then(data => {
+    const btn = document.getElementById('downloadApk');
+    if (btn && data.url) btn.href = data.url;
+  })
+  .catch(() => {});
+
 // Scroll animations
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

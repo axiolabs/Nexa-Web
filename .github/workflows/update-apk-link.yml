@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Reemplazar build ID en descargar.html
+      - name: Actualizar latest-build.json
         run: |
-          sed -i "s|/builds/[a-f0-9-]*\"|/builds/${{ github.event.inputs.build_id }}\"|" descargar.html
+          jq ".url = \"https://expo.dev/accounts/axiolabs/projects/nexa/builds/${{ github.event.inputs.build_id }}\"" latest-build.json > tmp.json && mv tmp.json latest-build.json
       - name: Commit y push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add descargar.html
+          git add latest-build.json
           git commit -m "chore: update APK build to ${{ github.event.inputs.build_id }}"
           git push

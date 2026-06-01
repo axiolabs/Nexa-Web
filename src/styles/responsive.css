@@ -30,8 +30,7 @@
         right: 0;
         width: min(300px, 80vw);
         height: 100vh;
-        background: rgba(10, 10, 12, 0.98);
-        backdrop-filter: blur(20px);
+        background: rgba(17, 17, 19, 0.98);
         flex-direction: column;
         padding: 5rem 2rem 2rem;
         gap: 0.5rem;
@@ -61,7 +60,7 @@
     .nav-links a {
         font-size: 1rem;
         padding: 0.9rem 0;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid var(--border);
     }
 
     .nav-links a::after {
@@ -86,7 +85,7 @@
         min-height: auto;
         padding: 5.5rem 1rem 4.5rem;
         background:
-            linear-gradient(180deg, rgba(10, 10, 12, 0.92) 0%, rgba(10, 10, 12, 0.82) 100%),
+            linear-gradient(180deg, rgba(17, 17, 19, 0.92) 0%, rgba(17, 17, 19, 0.82) 100%),
             url('https://i.imgur.com/dLmf9jW.jpeg') center/cover no-repeat;
     }
 
@@ -102,7 +101,7 @@
         margin: 0.75rem auto 0;
     }
 
-    .gradient-text {
+    h1, .gradient-text {
         font-size: 2.4rem;
     }
 
@@ -142,7 +141,7 @@
 
     .waitlist {
         padding: 1.5rem;
-        border-radius: 24px;
+        border-radius: 12px;
         margin: 4rem 0;
     }
 

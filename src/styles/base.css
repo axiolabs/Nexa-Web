@@ -1,12 +1,13 @@
 :root {
-    --bg: #0a0a0c;
-    --accent: #8a4fff;
-    --accent-glow: rgba(138, 79, 255, 0.4);
-    --text-main: #ffffff;
-    --text-muted: #a0a0b0;
-    --gradient: linear-gradient(135deg, #8a4fff 0%, #4f86ff 100%);
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bg: #111113;
+    --bg-elevated: #1a1a1e;
+    --accent: #5b8def;
+    --accent-hover: #4a7de0;
+    --text-main: #e4e4e9;
+    --text-muted: #7a7a8c;
+    --border: #2a2a30;
+    --card-bg: #18181c;
+    --transition: 0.2s ease;
 }
 
 html {

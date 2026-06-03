@@ -221,12 +221,18 @@
 
 .screenshot-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     margin-top: 3rem;
-    max-width: 900px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.screenshot-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 400px;
+    justify-self: center;
 }
 
 .screenshot-item {
@@ -246,7 +252,7 @@
     width: 100%;
     height: auto;
     display: block;
-    max-height: 500px;
+    max-height: 600px;
     object-fit: contain;
 }
 
@@ -263,11 +269,11 @@
 
 .discord-card {
     background: var(--card-bg);
-    padding: 3rem;
+    padding: 3.5rem;
     border-radius: 16px;
     border: 1px solid var(--border);
-    max-width: 480px;
-    margin: 2rem auto 0;
+    max-width: 520px;
+    margin: 2.5rem auto 0;
 }
 
 .discord-logo {

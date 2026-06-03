@@ -222,8 +222,11 @@
 .screenshot-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
     margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .screenshot-item {
@@ -243,6 +246,8 @@
     width: 100%;
     height: auto;
     display: block;
+    max-height: 500px;
+    object-fit: contain;
 }
 
 .screenshot-item p {
@@ -261,7 +266,7 @@
     padding: 3rem;
     border-radius: 16px;
     border: 1px solid var(--border);
-    max-width: 500px;
+    max-width: 480px;
     margin: 2rem auto 0;
 }
 

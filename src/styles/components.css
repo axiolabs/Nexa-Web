@@ -196,18 +196,6 @@
     background: var(--bg-elevated);
 }
 
-.member img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    transition: var(--transition);
-    border: 2px solid var(--border);
-}
-
-.member:hover img {
-    border-color: var(--accent);
-}
-
 .footer-links {
     display: flex;
     gap: 1rem;
@@ -224,6 +212,70 @@
 
 .footer-links a:hover {
     color: var(--text-main);
+}
+
+.screenshots {
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.screenshot-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.screenshot-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,0.12);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.screenshot-item p {
+    padding: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.discord-section {
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.discord-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    max-width: 500px;
+    margin: 2rem auto 0;
+}
+
+.discord-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.discord-card p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 input, select {

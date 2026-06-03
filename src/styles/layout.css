@@ -54,19 +54,6 @@ nav {
     margin-top: 4rem;
 }
 
-.team {
-    text-align: center;
-    padding: 6rem 0;
-}
-
-.team-grid {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-}
-
 footer {
     padding: 4rem 0;
     border-top: 1px solid var(--border);
